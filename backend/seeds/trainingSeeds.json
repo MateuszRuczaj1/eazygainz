@@ -1,0 +1,22 @@
+{
+  "title": "Pierwszy trening",
+  "exercises": [
+    {
+      "name": "Bench press",
+      "sets": [
+        {
+          "reps": 3,
+          "weight": 80
+        },
+        {
+          "reps": 2,
+          "weight": 80
+        },
+        {
+          "reps": 1,
+          "weight": 80
+        }
+      ]
+    }
+  ]
+}
