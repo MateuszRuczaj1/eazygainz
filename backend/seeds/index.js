@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import Training from "../models/TrainingModel";
-import trainingSeeds from "./trainingSeeds.json";
+import Training from "../models/TrainingModel.js";
+import trainingSeeds from "./trainingSeeds.json" assert { type: "json" };
 mongoose
   .connect("mongodb://127.0.0.1:27017/eazygainz")
   .then(() => console.log("Połączono z bazą danych"))
