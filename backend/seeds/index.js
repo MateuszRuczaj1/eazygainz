@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 import Training from "../models/TrainingModel.js";
 import trainingSeeds from "./trainingSeeds.json" assert { type: "json" };
+import dotenv from "dotenv";
+dotenv.config();
 mongoose
-  .connect("mongodb://127.0.0.1:27017/eazygainz")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("Połączono z bazą danych"))
   .catch((error) => console.log("Wystąpił błąd"));
 
