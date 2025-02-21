@@ -1,11 +1,27 @@
 import "./App.css";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "../pages/Home";
+import Layout from "../components/Layout";
+import About from "../pages/About";
 function App() {
-  return (
-    <div className="container min-h-screen flex justify-center items-center">
-      <h1>Lets get started</h1>
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;
