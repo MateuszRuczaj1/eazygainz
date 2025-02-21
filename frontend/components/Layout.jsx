@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <div className="flex min-h-screen items-center justify-center">
       <Sidebar />
-      <main className="ml-[200px] p-4">
+      <main className="md:ml-[200px] p-4">
         <Outlet />
       </main>
     </div>
