@@ -8,4 +8,5 @@
 }
 body {
   @apply font-poppins;
+  @apply bg-gradient-to-r from-emerald-100 to-emerald-300;
 }

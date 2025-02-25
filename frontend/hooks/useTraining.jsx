@@ -3,6 +3,6 @@ import { getTrainings } from "../helpers/http";
 export default function useTrainings() {
   return useQuery({
     queryKey: ["trainings"],
-    queryFn: getTrainings(),
+    queryFn: getTrainings,
   });
 }

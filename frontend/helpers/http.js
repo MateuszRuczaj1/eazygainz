@@ -6,6 +6,7 @@ const api = axios.create({
   },
 });
 export async function getTrainings() {
-  const { data } = api.get("/getTrainings");
+  const data = (await api.get("/getTrainings")).data;
+  console.log(data);
   return data;
 }
