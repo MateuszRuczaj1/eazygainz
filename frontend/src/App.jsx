@@ -1,9 +1,9 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "../pages/Home";
-import Layout from "../components/Layout";
-import About from "../pages/About";
-import Tranings from "../pages/Tranings";
+import Home from "./pages/Home";
+import Layout from "./components/Layout";
+import About from "./pages/About";
+import Trainings from "./pages/Trainings";
 import { QueryClient, QueryClientProvider } from "react-query";
 function App() {
   const queryClient = new QueryClient();
@@ -22,7 +22,7 @@ function App() {
         },
         {
           path: "/trainings",
-          element: <Tranings />,
+          element: <Trainings />,
         },
       ],
     },

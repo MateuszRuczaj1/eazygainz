@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../src/assets/logo.png";
+import logo from "../assets/logo.png";
 import Button from "./Button";
 import { motion } from "framer-motion";
 import { Dumbbell, Menu, X } from "lucide-react";
@@ -22,7 +22,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         </button>
       )}
       <motion.nav
-        className="bg-emerald-800 w-[200px] fixed min-h-screen left-0 top-0 rounded-r-xl items-center px-2  flex flex-col z-10"
+        className="bg-emerald-900 w-[200px] fixed min-h-screen left-0 top-0 rounded-r-xl items-center px-2  flex flex-col z-10"
         variants={sidebarVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}

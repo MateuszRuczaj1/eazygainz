@@ -1,6 +1,6 @@
 import Button from "../components/Button";
 import { motion } from "framer-motion";
-import hero from "../src/assets/hero.png";
+import hero from "../assets/hero.png";
 export default function Home() {
   return (
     <motion.section
