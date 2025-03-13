@@ -1,0 +1,84 @@
+[
+  {
+    "muscle": "chest",
+    "exercises": [
+      "Wyciskanie sztangi na ławce poziomej",
+      "Wyciskanie sztangi na ławce skośnej",
+      "Wyciskanie hantli na ławce poziomej",
+      "Wyciskanie hantli na ławce skośnej",
+      "Rozpiętki na bramie",
+      "Rozpiętki na maszynie butterfly",
+      "Pompki"
+    ]
+  },
+  {
+    "muscle": "legs",
+    "exercises": [
+      "Przysiad ze sztangą",
+      "Wypychanie nogami na suwnicy",
+      "Martwy ciąg klasyczny",
+      "Rumuński martwy ciąg",
+      "Bułgarski przysiad z hantlami",
+      "Wyprosty kolan na maszynie siedząc",
+      "Uginanie kolan leżąc",
+      "Wspięcia na palce stojąc",
+      "Wspięcia na palce siedząc"
+    ]
+  },
+  {
+    "muscle": "biceps",
+    "exercises": [
+      "Uginanie przedramion ze sztangą",
+      "Uginanie przedramion z hantlami",
+      "Uginanie przedramion na modlitewniku",
+      "Uginanie przedramion z linką wyciągu",
+      "Uginanie młotkowe",
+      "Uginanie przedramion z hantlami supinowane"
+    ]
+  },
+  {
+    "muscle": "triceps",
+    "exercises": [
+      "Wyciskanie francuskie sztangi",
+      "Prostowanie ramion na wyciągu górnym",
+      "Pompki na poręczach",
+      "Wyciskanie sztangi wąskim chwytem",
+      "Prostowanie ramienia z hantlem w opadzie"
+    ]
+  },
+  {
+    "muscle": "back",
+    "exercises": [
+      "Podciąganie na drążku",
+      "Martwy ciąg",
+      "Wiosłowanie sztangą",
+      "Wiosłowanie hantlem",
+      "Ściąganie drążka wyciągu do klatki",
+      "Ściąganie drążka wyciągu do karku",
+      "Face pulls"
+    ]
+  },
+  {
+    "muscle": "shoulders",
+    "exercises": [
+      "Wyciskanie sztangi nad głowę",
+      "Wyciskanie hantli nad głowę",
+      "Unoszenie bokiem hantli",
+      "Unoszenie przodem hantli",
+      "Face pulls",
+      "Odwodzenie ramion na maszynie reverse pec deck"
+    ]
+  },
+  {
+    "muscle": "abs",
+    "exercises": [
+      "Brzuszki",
+      "Plank",
+      "Unoszenie nóg w zwisie",
+      "Skręty tułowia z obciążeniem",
+      "Russian twists",
+      "Brzuszki na ławce skośnej",
+      "Scyzoryki"
+    ]
+  }
+]
