@@ -5,6 +5,7 @@ import trainingRoutes from "./routes/trainingRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import morgan from "morgan";
 import cors from "cors";
+import auth from "./middleware/auth.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
@@ -17,6 +18,9 @@ mongoose
   .catch((error) => console.log("Wystąpił błąd ", error));
 app.get("/home", (req, res) => {
   res.send("Hello");
+});
+app.get("/protected-endpoint", auth, (req, res) => {
+  res.json({ message: "Access gained!" });
 });
 app.use("/api/getTrainings", trainingRoutes);
 app.use("/api", userRoutes);
