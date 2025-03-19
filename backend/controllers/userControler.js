@@ -1,7 +1,6 @@
 import bcrypt from "bcrypt";
 import User from "../models/UserModel.js";
 import jwt from "jsonwebtoken";
-
 export const registerUser = async (req, res) => {
   bcrypt
     .hash(req.body.password, 10)
@@ -50,7 +49,7 @@ export const loginUser = (req, res) => {
               userId: user._id,
               userUsername: user.username,
             },
-            "RANDOM-TOKEN",
+            process.env.JWT_SECRET,
             {
               expiresIn: "24h",
             }
