@@ -5,6 +5,8 @@ import Layout from "./components/Layout";
 import About from "./pages/About";
 import Trainings from "./pages/Trainings";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Register from "./pages/Register";
+import PrivateRoutes from "./components/PrivateRoutes";
 function App() {
   const queryClient = new QueryClient();
   const router = createBrowserRouter([
@@ -21,10 +23,20 @@ function App() {
           element: <About />,
         },
         {
-          path: "/trainings",
-          element: <Trainings />,
+          element: <PrivateRoutes />,
+          children: [
+            {
+              path: "/trainings",
+
+              element: <Trainings />,
+            },
+          ],
         },
       ],
+    },
+    {
+      path: "/register",
+      element: <Register />,
     },
   ]);
 

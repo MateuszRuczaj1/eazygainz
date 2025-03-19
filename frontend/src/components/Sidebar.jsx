@@ -3,14 +3,14 @@ import logo from "../assets/logo.png";
 import Button from "./Button";
 import { motion } from "framer-motion";
 import { Dumbbell, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useAuth } from "@/store/AuthContext";
 
 export default function Sidebar({ isOpen, setIsOpen }) {
   const sidebarVariants = {
     open: { x: 0 },
     closed: { x: -250 },
   };
-
+  const { user, logout } = useAuth();
   return (
     <>
       {!isOpen && (
@@ -50,6 +50,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             Lista treningów
           </Button>
         </Link>
+        {user && <Button action={logout}>Wyloguj się</Button>}
       </motion.nav>
     </>
   );

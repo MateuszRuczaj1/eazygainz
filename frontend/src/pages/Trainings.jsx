@@ -7,6 +7,7 @@ export default function Trainings() {
   console.log(data);
   return (
     <section className="py-10">
+      Twoje treningi
       {data && (
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
           {data?.map((training, index) => (

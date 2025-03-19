@@ -10,3 +10,9 @@ export async function getTrainings() {
   console.log(data);
   return data;
 }
+export async function register(formBody) {
+  const parsedBody = JSON.stringify(formBody);
+  const data = await api.post("/register", parsedBody);
+  console.log(data);
+  return data;
+}
