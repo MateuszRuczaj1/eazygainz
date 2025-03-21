@@ -1,14 +1,25 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "@/store/AuthContext";
+import { useEffect, useState } from "react";
 
 export default function PrivateRoutes() {
-  const { userToken } = useAuth();
+  const { user, isLoading } = useAuth();
   const location = useLocation();
-  console.log(userToken);
-  console.log("From protected route");
-  return userToken ? (
+  const [isChecking, setIsChecking] = useState(true);
+
+  useEffect(() => {
+    if (!isLoading) {
+      setIsChecking(false);
+    }
+  }, [isLoading]);
+
+  if (isChecking) {
+    return <div>Ładowanie...</div>;
+  }
+
+  return user ? (
     <Outlet />
   ) : (
-    <Navigate to={"/register"} replace state={{ from: location }} />
+    <Navigate to="/login" replace state={{ from: location }} />
   );
 }

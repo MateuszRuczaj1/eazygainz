@@ -16,3 +16,13 @@ export async function register(formBody) {
   console.log(data);
   return data;
 }
+export async function login(formBody) {
+  const parsedBody = JSON.stringify(formBody);
+  const data = await api.post("/login", parsedBody);
+  console.log(data);
+  return data;
+}
+export async function getMuscleGroups() {
+  const data = (await api.get("/exercises/getMuscleGroups")).data;
+  return data;
+}

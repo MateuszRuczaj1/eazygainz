@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import Button from "./Button";
 import { motion } from "framer-motion";
-import { Dumbbell, Menu, X } from "lucide-react";
+import {
+  Dumbbell,
+  Menu,
+  X,
+  LogOutIcon,
+  CircleUserRoundIcon,
+} from "lucide-react";
 import { useAuth } from "@/store/AuthContext";
 
 export default function Sidebar({ isOpen, setIsOpen }) {
@@ -44,13 +50,24 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             transition={{ type: "spring", stiffness: 300 }}
           />
         </Link>
+        <p className="flex gap-4 items-center text-white p-2 text-2xl my-10">
+          <CircleUserRoundIcon size={32} color="white" />
+          {user?.userUsername}
+        </p>
         <Link to={"/trainings"} className="w-full mt-4">
           <Button>
             <Dumbbell size={24} />
             Lista treningów
           </Button>
         </Link>
-        {user && <Button action={logout}>Wyloguj się</Button>}
+        {user && (
+          <div className="mt-auto p-2">
+            <Button action={logout}>
+              <LogOutIcon size={24} />
+              Wyloguj się
+            </Button>
+          </div>
+        )}
       </motion.nav>
     </>
   );

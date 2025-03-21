@@ -5,7 +5,7 @@ import Layout from "./components/Layout";
 import About from "./pages/About";
 import Trainings from "./pages/Trainings";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Register from "./pages/Register";
+import Login from "./pages/Login";
 import PrivateRoutes from "./components/PrivateRoutes";
 function App() {
   const queryClient = new QueryClient();
@@ -15,14 +15,6 @@ function App() {
       element: <Layout />,
       children: [
         {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/about",
-          element: <About />,
-        },
-        {
           element: <PrivateRoutes />,
           children: [
             {
@@ -30,13 +22,21 @@ function App() {
 
               element: <Trainings />,
             },
+            {
+              path: "/",
+              element: <Home />,
+            },
+            {
+              path: "/about",
+              element: <About />,
+            },
           ],
         },
       ],
     },
     {
-      path: "/register",
-      element: <Register />,
+      path: "/login",
+      element: <Login />,
     },
   ]);
 

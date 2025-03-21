@@ -3,32 +3,30 @@ import { jwtDecode } from "jwt-decode";
 
 const AuthContext = createContext({
   user: null,
-  userToken: null,
-  loading: true, // Dodany stan loading
   logout: () => {},
+  login: () => {},
 });
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [userToken, setUserToken] = useState(null);
-  const [loading, setLoading] = useState(true); // stan ładowania
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      const decodedToken = jwtDecode(token);
-      setUser(decodedToken);
-      setUserToken(token);
+      setUser(jwtDecode(token));
     }
-    setLoading(false); // ustawienie loading na false po zakończeniu ładowania
   }, []);
+  const login = (token) => {
+    localStorage.setItem("token", token);
+    setUser(jwtDecode(token));
+  };
+
   const logout = () => {
-    const token = localStorage.getItem("token");
-    if (token) localStorage.removeItem("token");
+    localStorage.removeItem("token");
+    setUser(null);
     window.location.href = "/";
   };
   return (
-    <AuthContext.Provider value={{ user, userToken, loading, logout }}>
+    <AuthContext.Provider value={{ user, logout, login }}>
       {children}
     </AuthContext.Provider>
   );

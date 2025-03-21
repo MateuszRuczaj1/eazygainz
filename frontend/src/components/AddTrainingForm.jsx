@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import useMuscles from "@/hooks/useMuscles";
 import Button from "./Button";
 export default function AddTrainingForm() {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
+  const { data: musclesData, isLoading, error } = useMuscles();
+
   const handleShowContent = (e) => {
     e.preventDefault();
     setIsFormVisible(true);
@@ -14,6 +17,9 @@ export default function AddTrainingForm() {
     setData(JSON.stringify(data));
     setIsFormVisible(false);
   };
+  if (isLoading) return <p>Ładowanie muskli....</p>;
+  if (error) return <p>Wystąpił błąd: {error}</p>;
+  console.log(musclesData);
   return (
     <form
       className="flex flex-col items-center space-y-10"
@@ -36,9 +42,13 @@ export default function AddTrainingForm() {
               id="exercise"
               {...register("exercises", { required: true })}
             >
-              <option value="chest">Klatka piersiowa</option>
-              <option value="legs">Nogi</option>
-              <option value="back">Plecy</option>
+              {musclesData.map((item) => {
+                return (
+                  <option key={item._id} value={item.muscle}>
+                    {item.muscle}
+                  </option>
+                );
+              })}
             </select>
           </div>
           <div className="self-start my-4">
