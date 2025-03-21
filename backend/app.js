@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import trainingRoutes from "./routes/trainingRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import exerciseRoutes from "./routes/exercisesRoutes.js";
 import morgan from "morgan";
 import cors from "cors";
 import auth from "./middleware/auth.js";
@@ -23,6 +24,7 @@ app.get("/protected-endpoint", auth, (req, res) => {
   res.json({ message: "Access gained!" });
 });
 app.use("/api/getTrainings", trainingRoutes);
+app.use("/api/exercises", exerciseRoutes);
 app.use("/api", userRoutes);
 app.listen(port, (req, res) => {
   console.log(`Backend listening at port ${port}`);

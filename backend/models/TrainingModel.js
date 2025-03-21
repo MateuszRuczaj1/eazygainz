@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 const traningSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -20,15 +20,21 @@ const traningSchema = new mongoose.Schema({
           reps: {
             type: Number,
             required: true,
+            min: 1,
           },
           weight: {
             type: Number,
             required: true,
+            min: 1,
           },
         },
       ],
     },
   ],
+  _user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 const Training = mongoose.model("Training", traningSchema);
 export default Training;

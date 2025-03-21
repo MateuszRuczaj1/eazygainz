@@ -12,9 +12,19 @@ export const registerUser = async (req, res) => {
       });
       newUser
         .save()
-        .then((result) => {
+        .then((user) => {
+          const token = jwt.sign(
+            {
+              userId: user._id,
+              email: user.email,
+              userUsername: user.username,
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
+          );
           res.status(200).send({
             message: "Utworzono nowe konto użytkownika!",
+            token,
           });
         })
         .catch((error) => {

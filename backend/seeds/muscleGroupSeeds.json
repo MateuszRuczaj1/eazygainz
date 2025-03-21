@@ -1,6 +1,6 @@
 [
   {
-    "muscle": "chest",
+    "muscle": "Klatka piersiowa",
     "exercises": [
       "Wyciskanie sztangi na ławce poziomej",
       "Wyciskanie sztangi na ławce skośnej",
@@ -12,7 +12,7 @@
     ]
   },
   {
-    "muscle": "legs",
+    "muscle": "Nogi",
     "exercises": [
       "Przysiad ze sztangą",
       "Wypychanie nogami na suwnicy",
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "muscle": "biceps",
+    "muscle": "Biceps",
     "exercises": [
       "Uginanie przedramion ze sztangą",
       "Uginanie przedramion z hantlami",
@@ -37,7 +37,7 @@
     ]
   },
   {
-    "muscle": "triceps",
+    "muscle": "Triceps",
     "exercises": [
       "Wyciskanie francuskie sztangi",
       "Prostowanie ramion na wyciągu górnym",
@@ -47,7 +47,7 @@
     ]
   },
   {
-    "muscle": "back",
+    "muscle": "Plecy",
     "exercises": [
       "Podciąganie na drążku",
       "Martwy ciąg",
@@ -59,7 +59,7 @@
     ]
   },
   {
-    "muscle": "shoulders",
+    "muscle": "Barki",
     "exercises": [
       "Wyciskanie sztangi nad głowę",
       "Wyciskanie hantli nad głowę",
@@ -70,7 +70,7 @@
     ]
   },
   {
-    "muscle": "abs",
+    "muscle": "Brzuch",
     "exercises": [
       "Brzuszki",
       "Plank",
