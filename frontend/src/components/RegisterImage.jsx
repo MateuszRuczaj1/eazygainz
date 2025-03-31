@@ -1,4 +1,4 @@
-import fitness from "@/assets/img/fitness.webp";
+import fitness from "@/assets/fitness.webp";
 export default function RegisterImage() {
   return (
     <div className="hidden md:flex w-1/2">

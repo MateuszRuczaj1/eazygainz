@@ -6,7 +6,7 @@ export default function Layout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div
-      className={`flex min-h-screen  justify-center transition-all duration-200 ${
+      className={`flex min-h-screen  justify-center transition-all duration-200  ${
         isSidebarOpen && " max-md:bg-black/70 max-md:z-50"
       }`}
     >

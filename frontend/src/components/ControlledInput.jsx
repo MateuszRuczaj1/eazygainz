@@ -15,7 +15,7 @@ export default function ControlledInput({
         className="border border-slate-500 px-8 p-4 rounded-xl  w-full  placeholder:text-slate-400"
         placeholder={placeholderText}
       />
-      <p className="text-red-500 font-light">{error}</p>
+      <p className="text-red-500 font-light min-h-[24px]">{error}</p>
     </div>
   );
 }

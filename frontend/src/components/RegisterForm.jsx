@@ -17,7 +17,7 @@ const schema = yup.object().shape({
     .required("Wymagane hasło"),
 });
 export default function RegisterForm({ handleClick }) {
-  const { isLoading, mutate: doRegister } = useRegister();
+  const { isLoading, mutate: doRegister, error } = useRegister();
   const {
     register,
     handleSubmit,
@@ -30,7 +30,7 @@ export default function RegisterForm({ handleClick }) {
   };
   return (
     <form
-      className="flex md:w-1/2 flex-col p-6 gap-10 bg-white rounded-s-2xl max-md:rounded-2xl"
+      className="flex md:w-1/2 flex-col p-6 gap-5 bg-white rounded-s-2xl max-md:rounded-2xl px-20"
       onSubmit={handleSubmit(onSubmit)}
     >
       <h2 className="text-center md:text-left font-bold text-4xl px-4">
@@ -58,6 +58,11 @@ export default function RegisterForm({ handleClick }) {
         type="password"
         placeholderText={"Wpisz hasło"}
       />
+      {error && (
+        <p className="text-red-500 text-sm">
+          {error.response?.data?.message || "Nie udało się zarejestrować"}
+        </p>
+      )}
       <div className="px-4 w-full">
         <Button type="submit">Prześlij</Button>
       </div>

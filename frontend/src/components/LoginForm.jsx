@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import ControlledInput from "./ControlledInput";
 import Button from "./Button";
 import useLogin from "@/hooks/useLogin";
+import GoogleButton from "./GoogleButton";
 const schema = yup.object().shape({
   username: yup.string().required("Wymagana nazwa użytkownika"),
   password: yup
@@ -28,10 +29,10 @@ export default function LoginForm({ handleClick }) {
   }
   return (
     <form
-      className="flex md:w-1/2 flex-col p-6 gap-10 bg-white px-20 rounded-s-2xl max-md:rounded-2xl"
+      className="flex md:w-1/2 flex-col p-6 md:gap-10 gap-5 bg-white px-20 rounded-s-2xl max-md:rounded-2xl"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <h2 className="text-center px-4 md:text-left font-bold text-4xl">
+      <h2 className="text-center px-4 md:text-left font-bold md:text-4xl text-2xl">
         Zaloguj się do EAZYGAINZ!
       </h2>
       <ControlledInput
@@ -55,11 +56,11 @@ export default function LoginForm({ handleClick }) {
           {error.response?.data?.message || "Nie udało się zalogować"}
         </p>
       )}
-      <div className="px-4 w-full">
+      <div className="px-4 w-full space-y-3">
         <Button type="submit">Zaloguj się</Button>
       </div>
 
-      <section className="mt-10 self-start">
+      <section className="self-start text-sm">
         <p>Nie masz konta? </p>
         <p>Dołącz do nas i uzyskaj dostęp do profesjonalnych treningów</p>
         <p
@@ -69,6 +70,7 @@ export default function LoginForm({ handleClick }) {
           Utwórz konto
         </p>
       </section>
+      <GoogleButton />
     </form>
   );
 }

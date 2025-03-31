@@ -16,7 +16,9 @@ export default function PrivateRoutes() {
   if (isChecking) {
     return <div>Ładowanie...</div>;
   }
-
+  if (user) {
+    console.log(user);
+  }
   return user ? (
     <Outlet />
   ) : (

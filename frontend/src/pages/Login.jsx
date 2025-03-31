@@ -12,7 +12,7 @@ export default function Login() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="flex">
+        <div className="flex ">
           {hasAccount ? (
             <LoginForm handleClick={() => setHasAccount(false)} />
           ) : (

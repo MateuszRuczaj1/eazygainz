@@ -10,7 +10,7 @@ function Modal({ onClose, children }) {
       exit={{ opacity: 0 }}
     >
       <motion.div
-        className="bg-white p-4 max-w-[500px] w-full text-center shadow-2xl relative rounded-xl"
+        className="bg-white p-6 max-w-[600px] w-full text-center shadow-2xl relative rounded-2xl overflow-y-auto scrollbar-hidden max-h-screen"
         onClick={(e) => e.stopPropagation()}
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

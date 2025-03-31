@@ -11,3 +11,10 @@ body {
   @apply font-poppins;
   @apply bg-gradient-to-r from-emerald-100 to-emerald-300;
 }
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

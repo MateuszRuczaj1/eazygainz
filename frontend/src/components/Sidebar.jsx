@@ -52,7 +52,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         </Link>
         <p className="flex gap-4 items-center text-white p-2 text-2xl my-10">
           <CircleUserRoundIcon size={32} color="white" />
-          {user?.userUsername}
+          {user?.userUsername || user?.name}
         </p>
         <Link to={"/trainings"} className="w-full mt-4">
           <Button>
