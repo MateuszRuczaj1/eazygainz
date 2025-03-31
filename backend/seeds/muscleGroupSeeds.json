@@ -2,83 +2,175 @@
   {
     "muscle": "Klatka piersiowa",
     "exercises": [
-      "Wyciskanie sztangi na ławce poziomej",
-      "Wyciskanie sztangi na ławce skośnej",
-      "Wyciskanie hantli na ławce poziomej",
-      "Wyciskanie hantli na ławce skośnej",
-      "Rozpiętki na bramie",
-      "Rozpiętki na maszynie butterfly",
-      "Pompki"
+      {
+        "name": "Wyciskanie sztangi na ławce poziomej",
+        "image": "bench-press-1.png"
+      },
+      {
+        "name": "Wyciskanie sztangi na ławce skośnej",
+        "image": "incline-bench-press-1.png"
+      },
+      {
+        "name": "Wyciskanie hantli na ławce poziomej",
+        "image": "bench-press-dumbbell-1.png"
+      },
+      {
+        "name": "Wyciskanie hantli na ławce skośnej",
+        "image": "incline-dumbbell-press-1.png"
+      },
+      {
+        "name": "Rozpiętki na bramie",
+        "image": "cable-crossover-1.png"
+      },
+      {
+        "name": "Rozpiętki na maszynie butterfly",
+        "image": "butterfly-machine-1.png"
+      },
+      {
+        "name": "Pompki",
+        "image": "push-ups-1.png"
+      }
     ]
   },
   {
     "muscle": "Nogi",
     "exercises": [
-      "Przysiad ze sztangą",
-      "Wypychanie nogami na suwnicy",
-      "Martwy ciąg klasyczny",
-      "Rumuński martwy ciąg",
-      "Bułgarski przysiad z hantlami",
-      "Wyprosty kolan na maszynie siedząc",
-      "Uginanie kolan leżąc",
-      "Wspięcia na palce stojąc",
-      "Wspięcia na palce siedząc"
+      {
+        "name": "Przysiad ze sztangą",
+        "image": "barbell-squat-2.png"
+      },
+      {
+        "name": "Wypychanie nogami na suwnicy",
+        "image": "leg-press-2.png"
+      },
+      {
+        "name": "Martwy ciąg klasyczny",
+        "image": "barbell-dead-lifts-2.png"
+      },
+      {
+        "name": "Rumuński martwy ciąg",
+        "image": "romanian-dead-lift-2.png"
+      },
+      {
+        "name": "Bułgarski przysiad z hantlami",
+        "image": "one-leg-squat-with-barbell-2.png"
+      },
+      {
+        "name": "Wyprosty kolan na maszynie siedząc",
+        "image": "leg-extensions-1.png"
+      },
+      {
+        "name": "Uginanie kolan leżąc",
+        "image": "lying-leg-curl-machine-1.png"
+      },
+      {
+        "name": "Wspięcia na palce stojąc",
+        "image": "standing-calf-raises-using-machine-1.png"
+      },
+      {
+        "name": "Wspięcia na palce siedząc",
+        "image": "seated-calf-raise-with-barbell-2.png"
+      }
     ]
   },
   {
     "muscle": "Biceps",
     "exercises": [
-      "Uginanie przedramion ze sztangą",
-      "Uginanie przedramion z hantlami",
-      "Uginanie przedramion na modlitewniku",
-      "Uginanie przedramion z linką wyciągu",
-      "Uginanie młotkowe",
-      "Uginanie przedramion z hantlami supinowane"
+      {
+        "name": "Uginanie przedramion ze sztangą",
+        "image": "bicep-curls-with-barbell-1.png"
+      },
+      {
+        "name": "Uginanie przedramion z hantlami",
+        "image": "biceps-curl-with-dumbbell-2.png"
+      },
+      {
+        "name": "Uginanie przedramion na modlitewniku",
+        "image": "preacher-curl-with-barbell-1.png"
+      },
+      {
+        "name": "Uginanie przedramion z linką wyciągu",
+        "image": "standing-biceps-curl-with-cable-1.png"
+      },
+      {
+        "name": "Uginanie młotkowe",
+        "image": "bicep-hammer-curl-with-dumbbell-2.png"
+      },
+      {
+        "name": "Uginanie przedramion z hantlami supinowane",
+        "image": "biceps-curl-reverse-with-dumbbells-1.png"
+      }
     ]
   },
   {
     "muscle": "Triceps",
     "exercises": [
-      "Wyciskanie francuskie sztangi",
-      "Prostowanie ramion na wyciągu górnym",
-      "Pompki na poręczach",
-      "Wyciskanie sztangi wąskim chwytem",
-      "Prostowanie ramienia z hantlem w opadzie"
+      {
+        "name": "Wyciskanie francuskie sztangi",
+        "image": "lying-triceps-press-with-barbell-2.png"
+      },
+      {
+        "name": "Prostowanie ramion na wyciągu górnym",
+        "image": "triceps-pushdown-with-cable-1.png"
+      },
+      {
+        "name": "Pompki na poręczach",
+        "image": "tricep-dips-using-body-weight-1.png"
+      },
+      {
+        "name": "Wyciskanie sztangi wąskim chwytem",
+        "image": "close-grip-barbell-bench-press-1.png"
+      }
     ]
   },
   {
     "muscle": "Plecy",
     "exercises": [
-      "Podciąganie na drążku",
-      "Martwy ciąg",
-      "Wiosłowanie sztangą",
-      "Wiosłowanie hantlem",
-      "Ściąganie drążka wyciągu do klatki",
-      "Ściąganie drążka wyciągu do karku",
-      "Face pulls"
+      {
+        "name": "Podciąganie na drążku",
+        "image": "pull-ups-1.png"
+      },
+      {
+        "name": "Martwy ciąg",
+        "image": "barbell-dead-lifts-2.png"
+      },
+      {
+        "name": "Wiosłowanie sztangą",
+        "image": "reverse-grips-bent-over-barbell-rows-2.png"
+      },
+      {
+        "name": "Wiosłowanie hantlem",
+        "image": "straight-arm-dumbbell-pullover-1.png"
+      },
+      {
+        "name": "Ściąganie drążka wyciągu do klatki",
+        "image": "wide-grip-lat-pull-down-1.png"
+      },
+      {
+        "name": "Ściąganie drążka wyciągu do karku",
+        "image": "underhand-pull-downs-1.png"
+      }
     ]
   },
   {
     "muscle": "Barki",
     "exercises": [
-      "Wyciskanie sztangi nad głowę",
-      "Wyciskanie hantli nad głowę",
-      "Unoszenie bokiem hantli",
-      "Unoszenie przodem hantli",
-      "Face pulls",
-      "Odwodzenie ramion na maszynie reverse pec deck"
-    ]
-  },
-  {
-    "muscle": "Brzuch",
-    "exercises": [
-      "Brzuszki",
-      "Plank",
-      "Unoszenie nóg w zwisie",
-      "Skręty tułowia z obciążeniem",
-      "Russian twists",
-      "Brzuszki na ławce skośnej",
-      "Scyzoryki"
+      {
+        "name": "Wyciskanie sztangi nad głowę",
+        "image": "barbell-shoulder-press-2.png"
+      },
+      {
+        "name": "Wyciskanie hantli nad głowę",
+        "image": "dumbbell-shoulder-press-1.png"
+      },
+      {
+        "name": "Unoszenie bokiem hantli",
+        "image": "lateral-dumbbell-raises-1.png"
+      },
+      {
+        "name": "Unoszenie przodem hantli",
+        "image": "front-raises-1.png"
+      }
     ]
   }
 ]

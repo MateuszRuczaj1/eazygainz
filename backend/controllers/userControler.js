@@ -1,6 +1,9 @@
 import bcrypt from "bcrypt";
 import User from "../models/UserModel.js";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
+import { OAuth2Client } from "google-auth-library";
 export const registerUser = async (req, res) => {
   bcrypt
     .hash(req.body.password, 10)

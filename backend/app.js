@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import trainingRoutes from "./routes/trainingRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import exerciseRoutes from "./routes/exercisesRoutes.js";
+import oauthRoutes from "./routes/oauthRoutes.js";
 import morgan from "morgan";
 import cors from "cors";
 import auth from "./middleware/auth.js";
@@ -11,7 +12,13 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Tylko z tego źródła
+    methods: ["GET", "POST"],
+    credentials: true, // Jeśli potrzebujesz uwierzytelnienia
+  })
+);
 app.use(morgan("tiny"));
 mongoose
   .connect(process.env.MONGO_URI)
@@ -26,6 +33,7 @@ app.get("/protected-endpoint", auth, (req, res) => {
 app.use("/api/getTrainings", trainingRoutes);
 app.use("/api/exercises", exerciseRoutes);
 app.use("/api", userRoutes);
+app.use("/auth/google", oauthRoutes);
 app.listen(port, (req, res) => {
   console.log(`Backend listening at port ${port}`);
 });
