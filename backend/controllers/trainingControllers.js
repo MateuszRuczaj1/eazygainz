@@ -9,11 +9,17 @@ export const getTrainings = async (req, res) => {
   }
 };
 export const createTraining = async (req, res) => {
+  console.log("Otrzymane dane:", req.body);
   try {
     const training = new Training(req.body);
-    await training.save();
-    res.status(201).json(training);
-    return res.text("Nowy trening dodany!");
+    training
+      .save()
+      .then((savedTraining) => {
+        return res.status(201).json(savedTraining);
+      })
+      .catch((error) => {
+        return res.status(400).json({ error: error.message }); // Błąd walidacji lub zapisania
+      });
   } catch (error) {
     return res.status(500, { error: "Failed to create new training" });
   }
