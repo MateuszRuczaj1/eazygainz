@@ -10,18 +10,18 @@ const AuthContext = createContext({
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("accessToken");
     if (token) {
       setUser(jwtDecode(token));
     }
   }, []);
   const login = (token) => {
-    localStorage.setItem("token", token);
+    localStorage.setItem("accessToken", token);
     setUser(jwtDecode(token));
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("accessToken");
     setUser(null);
     window.location.href = "/";
   };

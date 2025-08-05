@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Card({ training }) {
   return (
     <motion.li
-      className="bg-white shadow-lg rounded-xl p-6   block space-y-4 relative w-md overflow-hidden"
+      className="bg-white shadow-lg rounded-xl p-6   block space-y-4 relative w-sm xl:w-md overflow-hidden"
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1.5, ease: "easeInOut" }}

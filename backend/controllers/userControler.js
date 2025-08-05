@@ -27,7 +27,7 @@ export const registerUser = async (req, res) => {
           );
           res.status(200).send({
             message: "Utworzono nowe konto użytkownika!",
-            token,
+            accessToken: token,
           });
         })
         .catch((error) => {
@@ -70,7 +70,7 @@ export const loginUser = (req, res) => {
           res.status(200).send({
             message: "Zalogowano!",
             username: user.username,
-            token,
+            accessToken: token,
           });
         })
         .catch((error) => {
@@ -85,4 +85,26 @@ export const loginUser = (req, res) => {
         e,
       });
     });
+};
+export const refreshToken = (req, res) => {
+  const authHeaders = req.headers["authorization"];
+  const token = authHeaders.split(" ")[1];
+  if (!token) {
+    return res.status(401).json({ message: "Brak tokena odświeżającego" });
+  }
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    if (err) {
+      return res.status(403).json({ message: "Token niepoprawny lub wygasł" });
+    }
+    const newAccessToken = jwt.sign(
+      {
+        id: user.id,
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "30m",
+      }
+    );
+    res.json({ accessToken: newAccessToken });
+  });
 };

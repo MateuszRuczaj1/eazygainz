@@ -9,7 +9,7 @@ export default function Trainings() {
     <section className="py-10">
       Twoje treningi
       {data && (
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
+        <ul className="grid grid-cols-1 md:grid-cols-2 items-start gap-5">
           {data?.map((training, index) => (
             <Card key={index} training={training} />
           ))}

@@ -14,7 +14,7 @@ export default function useLogin() {
       );
     },
     onSuccess: (response) => {
-      const token = response.data?.token;
+      const token = response.data?.accessToken;
       if (token) {
         authLogin(token);
       }

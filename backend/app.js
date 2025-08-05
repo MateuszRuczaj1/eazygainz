@@ -5,6 +5,7 @@ import trainingRoutes from "./routes/trainingRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import exerciseRoutes from "./routes/exercisesRoutes.js";
 import oauthRoutes from "./routes/oauthRoutes.js";
+import bodyWeightRoutes from "./routes/bodyWeightRoutes.js";
 import morgan from "morgan";
 import cors from "cors";
 import auth from "./middleware/auth.js";
@@ -19,7 +20,7 @@ app.use(
     credentials: true, // Jeśli potrzebujesz uwierzytelnienia
   })
 );
-app.use(morgan("tiny"));
+app.use(morgan("common"));
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("Połączono z bazą danych"))
@@ -32,6 +33,7 @@ app.get("/protected-endpoint", auth, (req, res) => {
 });
 app.use("/api/getTrainings", trainingRoutes);
 app.use("/api/exercises", exerciseRoutes);
+app.use("/api/bodyWeight", bodyWeightRoutes);
 app.use("/api", userRoutes);
 app.use("/auth/google", oauthRoutes);
 app.listen(port, (req, res) => {

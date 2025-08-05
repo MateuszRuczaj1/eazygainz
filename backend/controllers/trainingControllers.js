@@ -2,7 +2,7 @@ import Training from "../models/TrainingModel.js";
 
 export const getTrainings = async (req, res) => {
   try {
-    const trainings = await Training.find({});
+    const trainings = await Training.find({ _user: req.user.userId });
     return res.json(trainings);
   } catch (error) {
     return res.status(500, { error: "Failed to fetch trainings" });
@@ -10,8 +10,13 @@ export const getTrainings = async (req, res) => {
 };
 export const createTraining = async (req, res) => {
   console.log("Otrzymane dane:", req.body);
+  console.log("Użytkownik: ", req.user);
+  const newTraining = {
+    ...req.body,
+    _user: req.user.userId,
+  };
   try {
-    const training = new Training(req.body);
+    const training = new Training(newTraining);
     training
       .save()
       .then((savedTraining) => {

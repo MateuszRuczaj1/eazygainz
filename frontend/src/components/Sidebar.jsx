@@ -8,6 +8,7 @@ import {
   X,
   LogOutIcon,
   CircleUserRoundIcon,
+  Scale,
 } from "lucide-react";
 import { useAuth } from "@/store/AuthContext";
 
@@ -28,7 +29,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         </button>
       )}
       <motion.nav
-        className="bg-emerald-900 w-[200px] fixed min-h-screen left-0 top-0 rounded-r-xl items-center px-2  flex flex-col z-10"
+        className="bg-emerald-900 w-[200px] fixed min-h-screen left-0 top-0 rounded-r-xl items-center px-2  flex flex-col z-10 gap-10"
         variants={sidebarVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
@@ -40,7 +41,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         >
           <X size={24} />
         </button>
-        <Link to={"/"} className="mt-10">
+        <Link to={"/"} className="mt-10" viewTransition>
           <motion.img
             src={logo}
             alt="Logo"
@@ -50,14 +51,22 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             transition={{ type: "spring", stiffness: 300 }}
           />
         </Link>
-        <p className="flex gap-4 items-center text-white p-2 text-2xl my-10">
-          <CircleUserRoundIcon size={32} color="white" />
-          {user?.userUsername || user?.name}
+        <p className="flex gap-4 items-center text-white p-2 text-2xl my-10 max-w-[200px]">
+          <CircleUserRoundIcon size={24} color="white" />
+          <span className="break-words max-w-[140px] block text-base">
+            {user?.userUsername || user?.name}
+          </span>
         </p>
-        <Link to={"/trainings"} className="w-full mt-4">
+        <Link to={"/trainings"} className="w-full mt-4" viewTransition>
           <Button>
             <Dumbbell size={24} />
             Lista treningów
+          </Button>
+        </Link>
+        <Link to={"/bodyweight-raport"} viewTransition>
+          <Button>
+            <Scale size={24} />
+            Pomiary masy ciała
           </Button>
         </Link>
         {user && (

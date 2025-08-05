@@ -66,7 +66,7 @@ export default function Home() {
       <AnimatePresence>
         {isOpen && (
           <Modal onClose={() => setIsOpen(false)}>
-            <AddTrainingForm />
+            <AddTrainingForm onClose={() => setIsOpen(false)} />
           </Modal>
         )}
       </AnimatePresence>

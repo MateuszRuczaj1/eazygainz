@@ -7,6 +7,7 @@ import Trainings from "./pages/Trainings";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Login from "./pages/Login";
 import PrivateRoutes from "./components/PrivateRoutes";
+import BodyWeightRaport from "./pages/BodyWeightRaport";
 function App() {
   const queryClient = new QueryClient();
   const router = createBrowserRouter([
@@ -29,6 +30,10 @@ function App() {
             {
               path: "/about",
               element: <About />,
+            },
+            {
+              path: "/bodyweight-raport",
+              element: <BodyWeightRaport />,
             },
           ],
         },

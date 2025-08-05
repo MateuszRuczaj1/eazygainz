@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 import Training from "../models/TrainingModel.js";
+import { BodyWeight } from "../models/BodyWeightModel.js";
 import Muscle from "../models/MuscleGroupModel.js";
 import trainingSeeds from "./trainingSeeds.json" assert { type: "json" };
 import muscleGroupSeeds from "./muscleGroupSeeds.json" assert { type: "json" };
+import bodyWeightSeeds from "./bodyWeight.json" assert { type: "json" };
 import dotenv from "dotenv";
 dotenv.config({ path: "../.env" });
 const mongoURI = process.env.MONGO_URI;
@@ -22,6 +24,8 @@ const seedDB = async () => {
 
     await training.save();
     await Muscle.insertMany(muscleGroupSeeds);
+    await BodyWeight.deleteMany({});
+    await BodyWeight.insertMany(bodyWeightSeeds);
   } catch (error) {
     console.error(error);
   }
